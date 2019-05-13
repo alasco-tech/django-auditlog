@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 import threading
 import time
 
@@ -10,11 +8,7 @@ from django.apps import apps
 from auditlog.models import LogEntry
 from auditlog.compat import is_authenticated
 
-# Use MiddlewareMixin when present (Django >= 1.10)
-try:
-    from django.utils.deprecation import MiddlewareMixin
-except ImportError:
-    MiddlewareMixin = object
+from django.utils.deprecation import MiddlewareMixin
 
 
 threadlocal = threading.local()
